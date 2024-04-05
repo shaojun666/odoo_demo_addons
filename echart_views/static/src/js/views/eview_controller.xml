@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+      <t t-name="echart_views.buttons" owl="1">
+        <div class="btn-group" role="toolbar" aria-label="Main actions">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+            统计字段
+            </button>
+
+
+            <div class="dropdown-menu o_echart_measures_list" role="menu">
+                <t t-foreach="model.measures" t-as="measure" t-key="measure_index">
+                    <a role="menuitem" href="#" t-att-class="{ 'dropdown-item':true, 'selected': measure=== model.current_measure}" t-att-data-field="measure"
+                       t-on-click.prevent.stop="on_btn_click">
+                        <t t-esc="model.measure_vals[measure]"/>
+                    </a>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="echart_views.View" owl="1">
+
+
+
+        <Layout display="props.display" className="'h-100 overflow-auto'">
+             <t t-set-slot="layout-buttons">
+                <t t-call="{{ props.buttonTemplate }}"/>
+            </t>
+            <t t-component="props.Renderer" model="model"/>
+        </Layout>
+    </t>
+
+
+</templates>

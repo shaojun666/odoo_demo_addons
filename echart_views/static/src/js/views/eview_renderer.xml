@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="echart_views.Renderer" owl="1">
+<!--        <t t-esc="props.propsYouWant"/>-->
+<!--        <t t-foreach="props.records" t-as="record" t-key="record.id">-->
+<!--            // Show records-->
+<!--        </t>-->
+        <div class="container-fluid mt-3">
+
+            <div id="app" class="mt-2" style="width: 800px;height:500px;" t-ref="chart-bar">
+                <p>echart</p>
+            </div>
+        </div>
+    </t>
+</templates>

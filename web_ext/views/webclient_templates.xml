@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="web_ext.login_layout" inherit_id="web.login_layout" name="Web Ext Login Layout" priority="18">
+        <!--    去掉登录页面数据库管理    -->
+        <xpath expr="//a[hasclass('border-end')]" position="replace">
+
+        </xpath>
+        <!--    去掉登录页面版权    -->
+        <xpath expr='//a[@target="_blank"]' position="replace">
+
+        </xpath>
+        <xpath expr="//div[hasclass('border-top')]" position="inside">
+            <!--   登录页面添加备案信息         -->
+            <!--   将Odoo IOT备案为自己备案域名， https://beian.miit.gov.cn/ 修改为自己备案地址，粤 ICP 备 09115930号修改为自己备案号        -->
+            <div class="border-right pr-2 mr-1">Copyright@Odoo IOT</div>
+            <div>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤 ICP 备 09115930号</a>
+            </div>
+        </xpath>
+    </template>
+</odoo>

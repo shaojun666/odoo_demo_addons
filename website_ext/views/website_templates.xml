@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_ext_layout" inherit_id="website.layout" name="Website Ext layout" active="True">
+        <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name mr-2">Copyright &amp;copy; Odoo IOT</span>
+            <!--    Odoo IOT修改成自己公司名称        -->
+            <span><a href="https://beian.miit.gov.cn/" target="_blank">粤 ICP 备 09115930号</a></span>
+            <!--    https://beian.miit.gov.cn/ 修改为自己备案地址，粤 ICP 备 09115930号修改为自己备案号   -->
+        </xpath>
+    </template>
+</odoo>

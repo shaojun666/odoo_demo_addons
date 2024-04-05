@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <menuitem
+            id="menu_root_custom_page"
+            name="Custom Page"
+            groups="base.group_user"/>
+
+
+    <record id="action_custom_page_chart_page" model="ir.actions.client">
+        <field name="name">Custom Page Chart Page</field>
+        <field name="tag">custom_page.chart_page</field>
+    </record>
+
+    <menuitem
+            id="menu_custom_page_chart_page"
+            name="Custom Chart Page"
+            action="action_custom_page_chart_page"
+            parent="menu_root_custom_page"
+            groups="base.group_user"
+            sequence="0"/>
+</odoo>

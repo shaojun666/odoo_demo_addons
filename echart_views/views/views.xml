@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <menuitem id="menu_root_echart_views_game" name="Echart Views" groups="base.group_user"/>
+
+    <!--    <record id="echart_views_game_view_eview" model="ir.ui.view">-->
+    <!--        <field name="name">Game echart view</field>-->
+    <!--        <field name="model">echart_views.game</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <eview chart="bar">-->
+    <!--                <field name="name" type="name"/>-->
+    <!--                <field name="downloads" type="measure"/>-->
+    <!--                <field name="platform" type="measure"/>-->
+    <!--            </eview>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <record id="echart_views_game_view_tree" model="ir.ui.view">
+        <field name="name">Game tree view</field>
+        <field name="model">echart_views.game</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="downloads"/>
+                <field name="platform"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="echart_views_game_view_form" model="ir.ui.view">
+        <field name="name">Game tree view</field>
+        <field name="model">echart_views.game</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="platform"/>
+                    </group>
+                    <group>
+                        <field name="downloads"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="echart_views_game_view_eview" model="ir.ui.view">
+        <field name="name">Game eview view</field>
+        <field name="model">echart_views.game</field>
+        <field name="arch" type="xml">
+
+            <eview chart="bar">
+                <field name="name" type="name"/>
+                <field name="downloads" type="measure"/>
+                <field name="platform" type="measure"/>
+            </eview>
+
+        </field>
+    </record>
+
+    <record id='echart_views_game_action' model='ir.actions.act_window'>
+        <field name="name">Games</field>
+        <field name="res_model">echart_views.game</field>
+        <field name="view_mode">tree,form,eview</field>
+    </record>
+
+    <!--    <record id='echart_views_game_action' model='ir.actions.act_window'>-->
+    <!--        <field name="name">Games</field>-->
+    <!--        <field name="res_model">echart_views.game</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--    </record>-->
+
+
+    <menuitem id="menu_echart_views_game" name="Echart Views" action="echart_views_game_action"
+              parent="menu_root_echart_views_game" groups="base.group_user" sequence="0"/>
+
+</odoo>
